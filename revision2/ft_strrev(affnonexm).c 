@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By:  msamaali  <  msamaali@student.42.fr  >    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/17 16:14:31 by  msamaali         #+#    #+#             */
+/*   Updated: 2024/07/17 16:42:42 by  msamaali        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+char	*ft_strrev(char *str)
+{
+	int	i;
+	int	j;
+	char *st;
+
+	i = 0;
+	j = 0;
+	while (str[i])
+        i++;
+	st = malloc(sizeof(char) * (i + 1));
+	while ( i > 0)
+	{
+		st[j] = str[i -1];
+		j++;
+		i--;
+	}
+	st[j] = '\0';
+	return st;
+}
+int main(void)
+{
+	char *str ="asd";
+	char *ft;
+	ft = ft_strrev(str);
+	printf("%s",ft);
+	
+}
